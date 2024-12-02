@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,5 +22,5 @@ public class Professeur {
     @ManyToOne
     private Departement departement;
     @OneToMany(mappedBy = "professeur" ,cascade = CascadeType.ALL)
-    private List<Exam> examsResp;
+    private List<Exam> examsResp  = new ArrayList<>();
 }

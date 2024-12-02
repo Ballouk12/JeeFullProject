@@ -1,4 +1,4 @@
-package ma.ensa.beans;
+package ma.ensa.beans.utilities;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

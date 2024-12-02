@@ -1,6 +1,6 @@
 package ma.ensa.services;
 
-import ma.ensa.beans.AuthoInfo;
+import ma.ensa.beans.utilities.AuthoInfo;
 import ma.ensa.beans.User;
 import ma.ensa.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

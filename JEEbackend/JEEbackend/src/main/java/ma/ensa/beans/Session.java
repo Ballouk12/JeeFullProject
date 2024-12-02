@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -22,6 +23,6 @@ public class Session {
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateFin;
     @OneToMany(mappedBy = "session" ,cascade = CascadeType.ALL)
-    private List<Seance> seances;
+    private List<Seance> seances  = new ArrayList<>();
 
 }

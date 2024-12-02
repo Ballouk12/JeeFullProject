@@ -1,14 +1,11 @@
 package ma.ensa.controllers;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import ma.ensa.beans.AuthoInfo;
+import ma.ensa.beans.utilities.AuthoInfo;
 import ma.ensa.beans.User;
 import ma.ensa.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

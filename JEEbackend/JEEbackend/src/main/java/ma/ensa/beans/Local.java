@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -19,5 +20,5 @@ public class Local {
     private int size ;
     private String type;
     @OneToMany(mappedBy = "local" ,cascade = CascadeType.ALL)
-    private List<ExamLocal> examenLocation;
+    private List<ExamLocal> examenLocation  = new ArrayList<>();
 }
