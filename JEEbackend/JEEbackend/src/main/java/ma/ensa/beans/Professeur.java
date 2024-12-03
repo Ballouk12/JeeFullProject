@@ -21,6 +21,6 @@ public class Professeur {
     private boolean isDespense;
     @ManyToOne
     private Departement departement;
-    @OneToMany(mappedBy = "professeur" ,cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "responsable" ,cascade = CascadeType.ALL)
     private List<Exam> examsResp  = new ArrayList<>();
 }

@@ -24,5 +24,7 @@ public class Session {
     private Date dateFin;
     @OneToMany(mappedBy = "session" ,cascade = CascadeType.ALL)
     private List<Seance> seances  = new ArrayList<>();
+    @OneToMany(mappedBy = "session")
+    private List<Exam> exams  = new ArrayList<>();
 
 }

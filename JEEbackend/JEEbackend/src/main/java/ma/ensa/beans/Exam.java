@@ -23,4 +23,6 @@ public class Exam {
     private Professeur responsable;
     @OneToMany(mappedBy = "exam" , cascade = CascadeType.ALL)
     private List<ExamLocal> examenLocations  = new ArrayList<>();
+    @ManyToOne
+    private Session session ;
 }
