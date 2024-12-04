@@ -26,5 +26,4 @@ public class Session {
     private List<Seance> seances  = new ArrayList<>();
     @OneToMany(mappedBy = "session")
     private List<Exam> exams  = new ArrayList<>();
-
 }

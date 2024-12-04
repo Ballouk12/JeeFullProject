@@ -1,5 +1,6 @@
 package ma.ensa.services;
 
+import jakarta.persistence.EntityNotFoundException;
 import ma.ensa.beans.Seance;
 import ma.ensa.beans.Session;
 import ma.ensa.beans.utilities.SessionInput;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Method;
 import java.util.Date;
+import java.util.List;
 
 @Service
 
@@ -33,6 +35,7 @@ public class SessionService {
                 seance.setHeureDebut((Date) getHeureDebut.invoke(sessionInput));
                 seance.setHeureFin((Date) getHeureFin.invoke(sessionInput));
                 seance.setOrdre(i);
+                seance.setSession(findedSession);
                findedSession.getSeances().add(seance);
                 seanceRepository.save(seance);
             } catch (Exception e) {
@@ -55,6 +58,7 @@ public class SessionService {
             seance.setHeureDebut((Date) getHeureDebut.invoke(sessionInput));
             seance.setHeureFin((Date) getHeureFin.invoke(sessionInput));
             seance.setOrdre(i);
+            seance.setSession(newSession);
             newSession.getSeances().add(seance);
             seanceRepository.save(seance);
             } catch (Exception e) {
@@ -63,5 +67,17 @@ public class SessionService {
         }
 
         return sessionRepository.save(newSession);
+    }
+
+    public List<Session> getAllSesion(){
+        return sessionRepository.findAll();
+    }
+
+    public void deleteSession(int id) throws EntityNotFoundException {
+        if(sessionRepository.existsById(id)) {
+            sessionRepository.deleteById(id);
+        } else {
+            throw new EntityNotFoundException("Session with id : "+id+" not found");
+        }
     }
 }
